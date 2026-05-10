@@ -148,12 +148,23 @@ export const translations = {
       },
       updates: 'Join Us For The Latest News And Updates',
     },
-    footer: {
-      description: 'Murayev Capital - Supporting Innovation In Politics, Technology, And Justice',
-      copyright: '© 2025 Murayev Capital. All Rights Reserved.',
+      footer: {
+        description: 'Murayev Capital - Supporting Innovation In Politics, Technology, And Justice',
+        copyright: '© 2025 Murayev Capital. All Rights Reserved.',
+      },
+      forum: {
+        title: 'Project Forum',
+        description: 'Project Forum is a collaboration of independent software developers and political professionals to promote democratic governance by creating a truly decentralized and censorship-resistant voting platform. We aim to implement the platform into real political processes where it can serve as a reliable source of truth about public opinion. Therefore, we call on everyone who seeks to legitimize a political initiative, promote a campaign, or simply conduct a reliable vote, to join us and help create a new public forum together.',
+        button: 'Join Us',
+        link: 'https://forum.online/',
+      },
     },
-  },
   ru: {
-    // Add Russian translations here with the same structure
+    forum: {
+      title: 'Проєкт Forum',
+      description: 'Проєкт Forum — це співпраця незалежних розробників програмного забезпечення та політичних професіоналів для просування демократичного управління шляхом створення по-справжньому децентралізованої та стійкої до цензури платформи для голосування. Ми прагнемо впровадити платформу в реальні політичні процеси, де вона може служити надійним джерелом істини про громадську думку. Тому ми закликаємо всіх, хто прагне легітимізувати політичну ініціативу, просунути кампанію або просто провести надійне голосування, приєднатися до нас і допомогти створити новий публічний форум разом.',
+      button: 'Приєднатися',
+      link: 'https://forum.online/',
+    },
   },
 }

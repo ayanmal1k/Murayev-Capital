@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { TrendingUp, Shield, Users, Coins, BarChart3, Lock, ExternalLink, CheckCircle, ArrowRight, Menu, Mail } from "lucide-react"
+import { TrendingUp, Shield, Users, Coins, BarChart3, Lock, ExternalLink, CheckCircle, ArrowRight, Menu, Mail, Globe } from "lucide-react"
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts"
 import localFont from "next/font/local"
 import { LanguageSwitcher, type Language } from "@/components/ui/language-switcher"
@@ -174,11 +174,23 @@ const content = {
         secondary: "JOIN TELEGRAM"
       }
     },
-    footer: {
-      description: "Supporting Innovation In Politics, Technology, And Justice",
-      copyright: "© 2025 Murayev Capital. All Rights Reserved."
-    }
-  },
+      footer: {
+        description: "Supporting Innovation In Politics, Technology, And Justice",
+        copyright: "© 2025 Murayev Capital. All Rights Reserved."
+      },
+      forum: {
+        title: "Project Forum",
+        description: "Project Forum is a collaboration of independent software developers and political professionals to promote democratic governance by creating a truly decentralized and censorship-resistant voting platform. We aim to implement the platform into real political processes where it can serve as a reliable source of truth about public opinion. Therefore, we call on everyone who seeks to legitimize a political initiative, promote a campaign, or simply conduct a reliable vote, to join us and help create a new public forum together.",
+        button: "Join Us",
+        link: "https://forum.online/",
+        features: [
+          { title: "Resilient", desc: "Hardened against centralized control" },
+          { title: "Collaborative", desc: "Devs & Pros working in sync" },
+          { title: "Private", desc: "Sovereign identity and voting" },
+          { title: "Verifiable", desc: "Immutable record of truth" }
+        ]
+      }
+    },
   ru: {
     heroSection: {
       badge: "Теперь на Solana",
@@ -325,11 +337,23 @@ const content = {
         }
       ]
     },
-    footer: {
-      description: "Поддерживаем инновации в политике, технологиях и справедливости",
-      copyright: "© 2025 Murayev Capital. Все права защищены."
-    }
-  },
+      footer: {
+        description: "Поддерживаем инновации в политике, технологиях и справедливости",
+        copyright: "© 2025 Murayev Capital. Все права защищены."
+      },
+      forum: {
+        title: "Проєкт Forum",
+        description: "Проєкт Forum — це співпраця незалежних розробників програмного забезпечення та політичних професіоналів для просування демократичного управління шляхом створення по-справжньому децентралізованої та стійкої до цензури платформи для голосування. Ми прагнемо впровадити платформу в реальні політичні процеси, де вона може служити надійним джерелом істини про громадську думку. Тому ми закликаємо всіх, хто прагне легітимізувати політичну ініціативу, просунути кампанію або просто провести надійне голосування, приєднатися до нас і допомогти створити новий публічний форум разом.",
+        button: "Приєднатися",
+        link: "https://forum.online/",
+        features: [
+          { title: "Стійкість", desc: "Захищено від централізованого контролю" },
+          { title: "Співпраця", desc: "Розробники та профі працюють разом" },
+          { title: "Приватність", desc: "Суверенна ідентичність та голосування" },
+          { title: "Прозорість", desc: "Незмінне джерело істини" }
+        ]
+      }
+    },
   common: {
     name: "MURAYEV CAPITAL",
     telegram: "@fan_club_MRV",
@@ -468,6 +492,9 @@ export default function MurayevCapitalSite() {
             <a href="#roadmap" className={`hover:text-gray-300 transition-colors uppercase ${getFontClass(language === 'ru')}`}>
               {language === 'en' ? 'Roadmap' : 'Цели'}
             </a>
+            <a href="#forum" className={`hover:text-gray-300 transition-colors uppercase ${getFontClass(language === 'ru')}`}>
+              {language === 'en' ? 'Forum' : 'Forum'}
+            </a>
           </div>
 
           {/* Right section - Language switcher and Buy button */}
@@ -537,6 +564,13 @@ export default function MurayevCapitalSite() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {language === 'en' ? 'Roadmap' : 'Цели'}
+            </a>
+            <a
+              href="#forum"
+              className={`block py-2 px-4 rounded-md hover:bg-[#eeefea] hover:text-[#0c0c0a] transition-colors ${getFontClass(language === 'ru')}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {language === 'en' ? 'Forum' : 'Forum'}
             </a>
           </div>
 
@@ -1027,6 +1061,89 @@ export default function MurayevCapitalSite() {
         </div>
       </section>
 
+      {/* Forum Section - Premium Light Redesign */}
+      <section id="forum" className="relative py-32 px-6 overflow-hidden bg-[#eeefea] text-[#0c0c0a]">
+        {/* Advanced Background: Clean Grid and Soft Glows */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/40 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/[0.02] rounded-full blur-[100px] animate-pulse [animation-delay:3s]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            
+            {/* Left Column: Vision & Narrative */}
+            <div className="space-y-10">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/[0.03] border border-black/5 backdrop-blur-sm">
+                  <div className="w-2 h-2 rounded-full bg-[#0c0c0a] animate-ping"></div>
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-60">Ecosystem Initiative</span>
+                </div>
+                
+                <h2 className={`text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter ${getFontClass(false)}`}>
+                  PROJECT<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0c0c0a] via-[#0c0c0a]/80 to-[#0c0c0a]/40">FORUM</span>
+                </h2>
+                
+                <p className={`text-xl md:text-2xl text-[#0c0c0a]/70 leading-relaxed font-light max-w-xl ${getFontClass(true)}`}>
+                  {currentContent.forum.description}
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-6 pt-6">
+                <Button
+                  size="lg"
+                  className="group relative bg-[#0c0c0a] text-[#eeefea] hover:bg-gray-800 px-10 py-8 text-xl font-bold rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)]"
+                  onClick={() => window.open(currentContent.forum.link, "_blank")}
+                >
+                  <span className="relative flex items-center gap-3">
+                    {currentContent.forum.button}
+                    <ArrowRight className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" />
+                  </span>
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Column: Large Logo & Feature Grid */}
+            <div className="relative">
+              {/* Large Forum Logo with subtle animation */}
+              <div className="mb-12 relative group flex justify-center lg:justify-end">
+                <div className="absolute -inset-4 bg-black/[0.02] rounded-full blur-2xl group-hover:bg-black/[0.04] transition-all duration-700"></div>
+                <img 
+                  src="/forum-logo.png" 
+                  alt="Forum Logo" 
+                  className="relative w-64 md:w-80 h-auto object-contain transform hover:scale-105 transition-transform duration-700 drop-shadow-2xl" 
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 relative">
+                {[
+                  { icon: Shield, index: 0 },
+                  { icon: Users, index: 1 },
+                  { icon: Lock, index: 2 },
+                  { icon: BarChart3, index: 3 }
+                ].map((item, i) => (
+                  <div 
+                    key={i}
+                    className="group p-6 rounded-3xl bg-white/40 border border-black/[0.05] hover:bg-white/80 hover:border-black/10 transition-all duration-500 backdrop-blur-sm shadow-sm hover:shadow-md"
+                  >
+                    <item.icon className="w-8 h-8 mb-4 opacity-70 group-hover:scale-110 transition-transform duration-500" />
+                    <h3 className={`text-xl font-bold mb-1 ${getFontClass(language === 'ru')}`}>
+                      {currentContent.forum.features[item.index].title}
+                    </h3>
+                    <p className="text-xs text-black/50 leading-relaxed">
+                      {currentContent.forum.features[item.index].desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Security Features */}
       <section id="security" className="py-20 px-4 bg-[#0c0c0a] text-[#eeefea]">
         <div className="max-w-6xl mx-auto">
@@ -1110,60 +1227,96 @@ export default function MurayevCapitalSite() {
         </div>
       </section>
 
-      {/* Contact Us Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-[#eeefea] to-[#e5e6e1] text-[#0c0c0a]">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white/50 backdrop-blur-sm rounded-2xl p-12 shadow-2xl border-2 border-[#0c0c0a]/10 hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-              <div className="bg-[#0c0c0a] text-[#eeefea] px-8 py-3 rounded-full shadow-lg">
-                <h2 className={`text-2xl font-bold ${getFontClass(language === 'ru')}`}>
-                  {language === 'en' ? 'Contact Us' : 'Связаться с нами'}
+      {/* Contact Us Section - Premium Light Redesign */}
+      <section id="contact" className="relative py-32 px-6 overflow-hidden bg-[#eeefea] text-[#0c0c0a]">
+        {/* Abstract Background Accents - Light Mode */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-black/[0.02] rounded-full blur-[120px] -translate-x-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-black/[0.02] rounded-full blur-[100px] translate-x-1/4"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            
+            {/* Left Column: Call to Action */}
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <Badge className="bg-black/[0.05] text-black/60 border-black/5 px-4 py-1 text-xs tracking-[0.3em] uppercase">
+                   {language === 'en' ? 'Get In Touch' : 'Зворотний зв’язок'}
+                </Badge>
+                <h2 className={`text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] ${getFontClass(false)}`}>
+                  {language === 'en' ? 'READY TO SHAPE THE FUTURE?' : 'ГОТОВІ ТВОРITI МАЙБУТНЄ?'}
                 </h2>
-              </div>
-            </div>
-
-            <div className="mt-8 space-y-8 text-center">
-              <div className="flex items-center justify-center gap-4 p-6 bg-white/80 rounded-xl backdrop-blur-sm hover:bg-white transition-all duration-300">
-                <div className="p-3 bg-[#0c0c0a] rounded-full">
-                  <Mail className="w-6 h-6 text-[#eeefea]" />
-                </div>
-                <span className="text-xl font-medium">contact@murayevcapital.com</span>
-              </div>
-
-              <div className="flex flex-col items-center gap-6">
-                <Button
-                  size="lg"
-                  className="group relative bg-[#0c0c0a] text-[#eeefea] hover:bg-gray-800 px-8 py-6 text-lg font-semibold rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl"
-                  onClick={() => window.location.href = 'mailto:contact@murayevcapital.com'}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative flex items-center gap-3">
-                    {language === 'en' ? 'Send Email' : 'Отправить письмо'}
-                    <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </Button>
-
-                <p className="text-gray-600 text-sm max-w-md">
+                <p className={`text-xl text-black/50 max-w-lg leading-relaxed ${getFontClass(true)}`}>
                   {language === 'en' 
-                    ? 'We typically respond within 24 hours during business days.'
-                    : 'Мы обычно отвечаем в течение 24 часов в рабочие дни.'}
+                    ? "Have questions or ideas? Connect with our dedicated team to explore how we're redefining the intersection of technology and progress."
+                    : "Маєте запитання чи ідеї? Зв’яжіться з нашою командою, щоб дізнатися, як ми переосмислюємо перетин технологій та прогресу."}
                 </p>
               </div>
 
-              <div className="pt-6">
-                <div className="flex justify-center gap-4">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="rounded-full hover:scale-110 transition-transform duration-300 border-[#0c0c0a] text-[#0c0c0a] hover:bg-[#0c0c0a] hover:text-[#eeefea]"
-                    onClick={() => window.open("https://t.me/fan_club_MRV", "_blank")}
-                  >
-                    <i className="fa-brands fa-telegram w-5 h-5"></i>
-                  </Button>
-                
-                </div>
+              <div className="flex items-center gap-6 pt-4">
+                <div className="w-12 h-[1px] bg-black/10"></div>
+                <p className="text-sm font-bold uppercase tracking-widest opacity-40">Direct Channels</p>
               </div>
             </div>
+
+            {/* Right Column: Contact Cards */}
+            <div className="grid gap-6">
+              {/* Email Card - Inverted Style */}
+              <div 
+                className="group relative p-8 rounded-[2rem] bg-[#0c0c0a] text-[#eeefea] hover:bg-gray-900 transition-all duration-500 cursor-pointer overflow-hidden shadow-2xl"
+                onClick={() => window.location.href = 'mailto:contact@murayevcapital.com'}
+              >
+                <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                  <Mail className="w-24 h-24" />
+                </div>
+                <div className="relative flex items-center gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                    <Mail className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="space-y-1">
+                    <div className="text-sm font-bold uppercase tracking-widest opacity-40">Direct Email</div>
+                    <div className="text-xl md:text-2xl font-medium tracking-tight">contact@murayevcapital.com</div>
+                  </div>
+                  <div className="ml-auto">
+                    <ArrowRight className="w-6 h-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Telegram Community Card - Premium Black Theme */}
+              <div 
+                className="group relative p-8 rounded-[2rem] bg-white border-2 border-black/5 hover:border-black/20 transition-all duration-500 cursor-pointer overflow-hidden shadow-sm hover:shadow-xl"
+                onClick={() => window.open("https://t.me/fan_club_MRV", "_blank")}
+              >
+                <div className="absolute top-0 right-0 p-8 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity text-[#0c0c0a]">
+                   <i className="fa-brands fa-telegram w-24 h-24 text-7xl"></i>
+                </div>
+                <div className="relative flex items-center gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-black/[0.05] flex items-center justify-center group-hover:bg-[#0c0c0a] group-hover:scale-110 transition-all duration-500">
+                    <i className="fa-brands fa-telegram text-2xl text-[#0c0c0a] group-hover:text-white transition-colors"></i>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="text-sm font-bold uppercase tracking-widest text-[#0c0c0a] opacity-60">Join Community</div>
+                    <div className="text-xl md:text-2xl font-medium tracking-tight text-[#0c0c0a]">@fan_club_MRV</div>
+                  </div>
+                  <div className="ml-auto">
+                    <div className="bg-[#0c0c0a] text-white px-4 py-2 rounded-full text-xs font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-lg shadow-black/10">
+                       JOIN NOW
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Response Time Badge */}
+              <div className="flex items-center justify-center lg:justify-start gap-3 px-2">
+                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                 <span className="text-sm font-medium text-black/30 uppercase tracking-tighter">
+                   {language === 'en' ? 'Average response time: 24 hours' : 'Середній час відповіді: 24 години'}
+                 </span>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
