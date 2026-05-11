@@ -13,9 +13,10 @@ export type Language = "en" | "ru"
 
 interface LanguageSwitcherProps {
   onLanguageChange?: (language: Language) => void
+  invert?: boolean
 }
 
-export function LanguageSwitcher({ onLanguageChange }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ onLanguageChange, invert }: LanguageSwitcherProps) {
   const [currentLang, setCurrentLang] = useState<Language>("ru")
 
   const handleLanguageChange = (lang: Language) => {
@@ -29,7 +30,11 @@ export function LanguageSwitcher({ onLanguageChange }: LanguageSwitcherProps) {
         <Button 
           variant="outline" 
           size="icon" 
-          className={`w-16 bg-transparent border-[#eeefea] text-[#eeefea] hover:bg-[#eeefea] hover:text-[#0c0c0a] font-normal ${currentLang === 'ru' ? 'font-[family-name:var(--font-milk)]' : 'font-[family-name:var(--font-nhl-phoenix)] font-light'}`}
+          className={`w-16 bg-transparent font-normal ${
+            invert 
+              ? 'border-[#0c0c0a] text-[#0c0c0a] hover:bg-[#0c0c0a] hover:text-[#eeefea]' 
+              : 'border-[#eeefea] text-[#eeefea] hover:bg-[#eeefea] hover:text-[#0c0c0a]'
+          } ${currentLang === 'ru' ? 'font-[family-name:var(--font-milk)]' : 'font-[family-name:var(--font-nhl-phoenix)] font-light'}`}
         >
           {currentLang.toUpperCase()}
         </Button>

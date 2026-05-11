@@ -11,6 +11,8 @@ import { LanguageSwitcher, type Language } from "@/components/ui/language-switch
 import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from "@/components/ui/toaster"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { doc, updateDoc, increment, setDoc } from "firebase/firestore"
+import { db } from "@/lib/firebase"
 
 const nhlPhoenix = localFont({
   src: "../public/fonts/NHL-Phoenix-Regular.ttf",
@@ -1095,7 +1097,20 @@ export default function MurayevCapitalSite() {
                 <Button
                   size="lg"
                   className="group relative bg-[#0c0c0a] text-[#eeefea] hover:bg-gray-800 px-10 py-8 text-xl font-bold rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)]"
-                  onClick={() => window.open(currentContent.forum.link, "_blank")}
+                  onClick={async () => {
+                    window.open(currentContent.forum.link, "_blank");
+                    try {
+                      const counterRef = doc(db, "stats", "forum_clicks");
+                      await updateDoc(counterRef, { count: increment(1) });
+                    } catch (e: any) {
+                      if (e.code === 'not-found') {
+                        const counterRef = doc(db, "stats", "forum_clicks");
+                        await setDoc(counterRef, { count: 1 });
+                      } else {
+                        console.error("Error updating clicks:", e);
+                      }
+                    }
+                  }}
                 >
                   <span className="relative flex items-center gap-3">
                     {currentContent.forum.button}
